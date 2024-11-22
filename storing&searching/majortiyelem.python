@@ -1,0 +1,22 @@
+class Solution:
+    def majorityElement(self, arr):
+        count =0;
+        cad =-1;
+        
+        for num in arr:
+            if count ==0:
+                cad =num;
+                count=1
+            elif cad==num:
+                count+=1;
+            else:
+                count-=1;
+        count=0
+        for num in arr :
+            if num==cad:
+                count+=1;
+        
+        if count>len(arr)/2:
+            return cad;
+        else:
+            return -1;
